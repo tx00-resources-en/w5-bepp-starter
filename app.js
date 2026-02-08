@@ -9,6 +9,13 @@ app.use(morgan("dev"));
 
 // Middleware to parse JSON
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('API is running');
+});
+
+// Use text routes
+app.use('/api/ai', aiRoutes);
  
 // Use the tourRouter for all "/tours" routes
 app.use("/api/tours", tourRouter);
